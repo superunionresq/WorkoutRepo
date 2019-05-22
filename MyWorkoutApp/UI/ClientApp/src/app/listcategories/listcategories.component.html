@@ -1,0 +1,15 @@
+<br />
+
+<add-category></add-category>
+
+<br />
+<table class="table">
+  <tr>
+    <th style="color:whitesmoke">Category Name</th>
+  </tr>
+  <tr *ngFor="let cat of categories">
+    <td><edit-categories [addname]="cat"></edit-categories></td>
+  </tr>
+</table>
+
+<a [routerLink]="['/add-workout']" class="btn btn-primary" routerLinkActive="active">Back</a>

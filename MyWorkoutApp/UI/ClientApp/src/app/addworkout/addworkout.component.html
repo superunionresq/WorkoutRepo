@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br />
+      <br />
+      <form novalidate [formGroup]="frmWorkout" (ngSubmit)="saveForm(frmWorkout)">
+
+        <div class="form-group">
+          <label class="l">Title</label>
+          <input type="text" name="Title" id="Title" formControlName="Title" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+          <label class="l">Note</label>
+          <textarea type="textarea" name="Note" id="Note" formControlName="Note" class="form-control" ></textarea>
+         
+        </div>
+
+        <div class="form-group form-inline">
+          <label class="l">Calories Burnt Per Min</label>
+          <input type="text" name="Calory" id="Calory" formControlName="Calory" class="form-control"/>
+          <button type="button" class="btn btn-success " (click)="inc()" style="margin-left:5px">+</button>
+          <button type="button" class="btn btn-danger" (click)="dec()" style="margin-left:5px">-</button>
+        </div>
+
+        <div class="form-group">
+          <label class="l">Category</label>
+          <select formControlName="Categ">
+            <option [value]="cat.Category_id" *ngFor="let cat of categories"  >{{cat.Category_Name}}</option>
+
+          </select>
+          <a [routerLink]="['/list-categories']" class=" btn btn-success ">+</a>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!frmWorkout.valid" >Add Workout</button>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .l{
+    color:white;
+  }
+</style>

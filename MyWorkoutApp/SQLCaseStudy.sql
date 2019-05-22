@@ -33,4 +33,4 @@ id int primary key identity
 
 insert into WorkOut_Category values ('Jogging')
 insert into WorkOut_Category values ('Walking')
-select * from WorkOut_category
+select * from WorkOut_collection

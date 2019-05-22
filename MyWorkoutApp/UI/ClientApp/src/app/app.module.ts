@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -9,6 +9,12 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { CategoryService } from './category.service';
+import { ListcategoriesComponent } from './listcategories/listcategories.component';
+import { AddcategoryComponent } from './addcategory/addcategory.component';
+import { EditcategoryComponent } from './editcategory/editcategory.component';
+import { AddworkoutComponent } from './addworkout/addworkout.component';
+import { WorkoutService } from './workout.service';
 
 @NgModule({
   declarations: [
@@ -16,19 +22,30 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    ListcategoriesComponent,
+    AddcategoryComponent,
+    EditcategoryComponent,
+    AddworkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'list-categories', component: ListcategoriesComponent },
+      { path: 'add-category', component: AddcategoryComponent },
+      { path: 'edit-categories', component: EditcategoryComponent },
+      { path: 'list-categories', component: ListcategoriesComponent },
+      { path: 'add-workout', component: AddworkoutComponent },
+      { path: '', redirectTo: 'list-categories', pathMatch:'full' }
+      
     ])
   ],
-  providers: [],
+  providers: [CategoryService, WorkoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
