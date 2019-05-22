@@ -12,5 +12,9 @@ export class WorkoutService {
 
   save(work: Workout) {
     return this.http.post(this._url, work);
-  } 
+  }
+
+  getWorkouts(): Observable<Workout[]> {
+    return this.http.get<Workout[]>(this._url);
+  }
 }

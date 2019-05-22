@@ -103,5 +103,22 @@ namespace Bll
             return objWork;
 
         }
+
+        public List<WorkOut_Collection> ListAllWorkouts()
+        {
+            try
+            {
+
+                WorkoutDBEntities db = new WorkoutDBEntities();
+
+                return db.WorkOut_Collection.ToList();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

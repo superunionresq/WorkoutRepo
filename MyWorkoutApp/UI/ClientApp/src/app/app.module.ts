@@ -15,6 +15,8 @@ import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { EditcategoryComponent } from './editcategory/editcategory.component';
 import { AddworkoutComponent } from './addworkout/addworkout.component';
 import { WorkoutService } from './workout.service';
+import { ListworkoutsComponent } from './listworkouts/listworkouts.component';
+import { CrudworkoutComponent } from './crudworkout/crudworkout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { WorkoutService } from './workout.service';
     ListcategoriesComponent,
     AddcategoryComponent,
     EditcategoryComponent,
-    AddworkoutComponent
+    AddworkoutComponent,
+    ListworkoutsComponent,
+    CrudworkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,6 +45,8 @@ import { WorkoutService } from './workout.service';
       { path: 'edit-categories', component: EditcategoryComponent },
       { path: 'list-categories', component: ListcategoriesComponent },
       { path: 'add-workout', component: AddworkoutComponent },
+      { path: 'list-workout', component: ListworkoutsComponent },
+      { path: 'crud-workout', component: CrudworkoutComponent },
       { path: '', redirectTo: 'list-categories', pathMatch:'full' }
       
     ])
